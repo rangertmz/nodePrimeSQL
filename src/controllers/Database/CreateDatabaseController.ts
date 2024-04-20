@@ -12,7 +12,7 @@ export const createDatabase = async (req: Request, res: Response) => {
     const result = await pool
       .request()
       .query(`SELECT name FROM sys.databases WHERE name = '${databaseName}'`);
-      //Si existe la base de datos
+    //Si existe la base de datos
     if (result.recordset.length > 0) {
       return res
         .status(400)
